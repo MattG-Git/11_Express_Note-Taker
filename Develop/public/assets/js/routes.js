@@ -22,8 +22,11 @@ router.post('/notes', (req, res) => {
         if (req.body){
             const newNote = {
                 title,
-                text
+                text,
+                id: Math.floor((1 + Math.random()) * 100).toString()
             };
+            console.log(newNote.id);
+
             allNotes.push(newNote);
             fs.writeFile('./db/db.json', JSON.stringify(allNotes),(err) => {
                 if (err) {
@@ -35,5 +38,27 @@ router.post('/notes', (req, res) => {
         } 
     })
 });
+
+router.delete('/notes/:id', (req, res) => {
+    // console.log(req);
+    if(req) {
+        console.log('deleting your note')
+    }
+    fs.readFile('./db/db.json', 'utf8', (err, data) => {
+        let allNotes = JSON.parse(data);
+        console.log(allNotes)
+    allNotes = allNotes.filter(note => (note.id !== req.params.id));
+        console.log(allNotes);
+        
+    fs.writeFile('./db/db.json', JSON.stringify(allNotes), (err) => {
+        if (err) {
+            console.log(err);
+        }else {
+            console.log('Your note has been deleted');
+            res.json(allNotes);
+        }
+    })
+    })
+})
 
 module.exports = router;
