@@ -38,5 +38,5 @@ If the user chooses, the notes may be deleted by selecting the garbage can icon.
 Please see [live page here](https://express-note-taker-mattg.herokuapp.com/)
 
 # Video Demo
-[Untitled_ Sep 5, 2022 11_16 AM.webm](https://user-images.githubusercontent.com/70189946/188499766-85ed44c5-dd49-44dd-ba76-0fbb48d453d4.webm)
+[Note Takeing App Recorded Testing](https://user-images.githubusercontent.com/70189946/188499766-85ed44c5-dd49-44dd-ba76-0fbb48d453d4.webm)
 
